@@ -12,14 +12,14 @@
  * Additional serialization options
  */
 export interface CookieSerializeOptions {
-  /**
+   /**
    * Specifies the value for the {@link https://tools.ietf.org/html/rfc6265#section-5.2.3|Domain Set-Cookie attribute}. By default, no
    * domain is set, and most clients will consider the cookie to apply to only
    * the current domain.
    */
-  domain?: string | undefined;
+   domain?: string | undefined
 
-  /**
+   /**
    * Specifies a function that will be used to encode a cookie's value. Since
    * value of a cookie has a limited character set (and must be a simple
    * string), this function can be used to encode a value into a string suited
@@ -29,9 +29,9 @@ export interface CookieSerializeOptions {
    * encode a JavaScript string into UTF-8 byte sequences and then URL-encode
    * any that fall outside of the cookie range.
    */
-  encode?(value: string): string;
+   encode?(value: string): string
 
-  /**
+   /**
    * Specifies the `Date` object to be the value for the {@link https://tools.ietf.org/html/rfc6265#section-5.2.1|`Expires` `Set-Cookie` attribute}. By default,
    * no expiration is set, and most clients will consider this a "non-persistent cookie" and will delete
    * it on a condition like exiting a web browser application.
@@ -41,8 +41,8 @@ export interface CookieSerializeOptions {
    * possible not all clients by obey this, so if both are set, they should
    * point to the same date and time.
    */
-  expires?: Date | undefined;
-  /**
+   expires?: Date | undefined
+   /**
    * Specifies the boolean value for the {@link https://tools.ietf.org/html/rfc6265#section-5.2.6|`HttpOnly` `Set-Cookie` attribute}.
    * When truthy, the `HttpOnly` attribute is set, otherwise it is not. By
    * default, the `HttpOnly` attribute is not set.
@@ -50,8 +50,8 @@ export interface CookieSerializeOptions {
    * *Note* be careful when setting this to true, as compliant clients will
    * not allow client-side JavaScript to see the cookie in `document.cookie`.
    */
-  httpOnly?: boolean | undefined;
-  /**
+   httpOnly?: boolean | undefined
+   /**
    * Specifies the number (in seconds) to be the value for the `Max-Age`
    * `Set-Cookie` attribute. The given number will be converted to an integer
    * by rounding down. By default, no maximum age is set.
@@ -61,13 +61,13 @@ export interface CookieSerializeOptions {
    * possible not all clients by obey this, so if both are set, they should
    * point to the same date and time.
    */
-  maxAge?: number | undefined;
-  /**
+   maxAge?: number | undefined
+   /**
    * Specifies the value for the {@link https://tools.ietf.org/html/rfc6265#section-5.2.4|`Path` `Set-Cookie` attribute}.
    * By default, the path is considered the "default path".
    */
-  path?: string | undefined;
-  /**
+   path?: string | undefined
+   /**
    * Specifies the `string` to be the value for the [`Priority` `Set-Cookie` attribute][rfc-west-cookie-priority-00-4.1].
    *
    * - `'low'` will set the `Priority` attribute to `Low`.
@@ -80,8 +80,8 @@ export interface CookieSerializeOptions {
    * **note** This is an attribute that has not yet been fully standardized, and may change in the future.
    * This also means many clients may ignore this attribute until they understand it.
    */
-  priority?: "low" | "medium" | "high" | undefined;
-  /**
+   priority?: 'low' | 'medium' | 'high' | undefined
+   /**
    * Specifies the boolean or string to be the value for the {@link https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03#section-4.1.2.7|`SameSite` `Set-Cookie` attribute}.
    *
    * - `true` will set the `SameSite` attribute to `Strict` for strict same
@@ -98,8 +98,8 @@ export interface CookieSerializeOptions {
    *
    * *note* This is an attribute that has not yet been fully standardized, and may change in the future. This also means many clients may ignore this attribute until they understand it.
    */
-  sameSite?: true | false | "lax" | "strict" | "none" | undefined;
-  /**
+   sameSite?: true | false | 'lax' | 'strict' | 'none' | undefined
+   /**
    * Specifies the boolean value for the {@link https://tools.ietf.org/html/rfc6265#section-5.2.5|`Secure` `Set-Cookie` attribute}. When truthy, the
    * `Secure` attribute is set, otherwise it is not. By default, the `Secure` attribute is not set.
    *
@@ -107,14 +107,14 @@ export interface CookieSerializeOptions {
    * not send the cookie back to the server in the future if the browser does
    * not have an HTTPS connection.
    */
-  secure?: boolean | undefined;
+   secure?: boolean | undefined
 }
 
 /**
  * Additional parsing options
  */
 export interface CookieParseOptions {
-  /**
+   /**
    * Specifies a function that will be used to decode a cookie's value. Since
    * the value of a cookie has a limited character set (and must be a simple
    * string), this function can be used to decode a previously-encoded cookie
@@ -126,5 +126,5 @@ export interface CookieParseOptions {
    * *Note* if an error is thrown from this function, the original, non-decoded
    * cookie value will be returned as the cookie's value.
    */
-  decode?(value: string): string;
+   decode?(value: string): string
 }
