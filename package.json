@@ -25,7 +25,7 @@
     }
   },
   "scripts": {
-    "build": "unbuild",
+    "build": "buildkarium",
     "dev": "vitest",
     "lint": "eslint --cache --ext .ts,.js,.mjs,.cjs .",
     "lint:fix": "eslint --cache --ext .ts,.js,.mjs,.cjs . --fix",
