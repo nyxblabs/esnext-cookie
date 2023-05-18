@@ -1,6 +1,6 @@
 {
   "name": "esnext-cookie",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "🔨🍪📦 ESM build of cookie with bundled types.",
   "author": "Dennis Ollhoff <contact@nyxb.xyz>",
   "license": "MIT",
