@@ -1,0 +1,49 @@
+{
+  "name": "esnext-cookie",
+  "version": "0.0.1",
+  "description": "🔨🍪📦 ESM build of cookie with bundled types.",
+  "author": "Dennis Ollhoff <contact@nyxb.xyz>",
+  "license": "MIT",
+  "hompage": "https://💻nyxb.ws",
+  "sideEffects": false,
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyxblabs/esnext-cookie.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nyxblabs/esnext-cookie/issues"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "build": "unbuild",
+    "dev": "vitest",
+    "lint": "eslint --cache --ext .ts,.js,.mjs,.cjs .",
+    "lint:fix": "eslint --cache --ext .ts,.js,.mjs,.cjs . --fix",
+    "release": "nyxr test && nyxr build && nyxlx changelogen@latest --release --push && pnpm publish",
+    "test": "nyxr lint && vitest run --coverage"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@nyxb/eslint-config": "0.0.53",
+    "@vitest/coverage-c8": "^0.31.0",
+    "eslint": "^8.40.0",
+    "typescript": "^5.0.4",
+    "buildkarium": "latest",
+    "vitest": "^0.31.0"
+  },
+  "packageManager": "pnpm@8.5.0",
+  "files": [
+    "dist"
+  ],
+  "keywords": []
+}
